@@ -6,8 +6,8 @@ UK-wide Event Supplier Intelligence Database — discover, store, categorise and
 
 | Phase | Deliverable | Status |
 |-------|-------------|--------|
-| 1 | Database schema | ✅ In progress (this PR) |
-| 2 | Backend API | Pending |
+| 1 | Database schema | ✅ Complete |
+| 2 | Backend API | ✅ In progress (this PR) |
 | 3 | Supplier discovery engine | Pending |
 | 4 | Deduplication engine | Pending |
 | 5 | Admin dashboard | Pending |
@@ -25,6 +25,21 @@ chmod +x scripts/apply_migrations.sh
 ```
 
 See [docs/architecture/phase-1-database.md](docs/architecture/phase-1-database.md).
+
+## Phase 2 — Backend API
+
+TypeScript Fastify API for supplier CRM search, campaigns, CSV/XLSX exports, and admin endpoints.
+
+```bash
+cd api
+cp .env.example .env
+npm install
+npm run dev
+# smoke test
+npm run test:smoke
+```
+
+See [api/README.md](api/README.md) and [docs/architecture/phase-2-api.md](docs/architecture/phase-2-api.md).
 
 ## Compliance boundaries
 
