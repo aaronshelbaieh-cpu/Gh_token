@@ -1,6 +1,6 @@
-# GED API (Phase 2)
+# GED API (Phases 2–3)
 
-TypeScript + Fastify backend for the Global Events Directory.
+TypeScript + Fastify backend for the Global Events Directory, including the supplier discovery engine.
 
 ## Stack
 
@@ -37,6 +37,9 @@ Default: `http://127.0.0.1:3000`
 | GET | `/exports/:id/download` | Download file |
 | GET | `/admin/overview` | Dashboard counters |
 | POST | `/admin/suppressions` | GDPR/PECR opt-out |
+| POST | `/discovery/queries/generate` | Build service × location queries |
+| POST | `/discovery/runs` | Start discovery run (`mock` / `manual`) |
+| GET | `/discovery/stats` | Pending query / run stats |
 
 ### Supplier search filters
 

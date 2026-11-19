@@ -8,6 +8,7 @@ import { AppError } from "./lib/errors.js";
 import { adminRoutes } from "./routes/admin.js";
 import { campaignRoutes } from "./routes/campaigns.js";
 import { catalogRoutes } from "./routes/catalog.js";
+import { discoveryRoutes } from "./routes/discovery.js";
 import { exportRoutes } from "./routes/exports.js";
 import { healthRoutes } from "./routes/health.js";
 import { supplierRoutes } from "./routes/suppliers.js";
@@ -62,12 +63,13 @@ export async function buildApp() {
   await app.register(supplierRoutes);
   await app.register(campaignRoutes);
   await app.register(exportRoutes);
+  await app.register(discoveryRoutes);
   await app.register(adminRoutes);
 
   app.get("/", async () => ({
     name: "Global Events Directory API",
-    version: "0.2.0",
-    phase: 2,
+    version: "0.3.0",
+    phase: 3,
     docs: "/health",
   }));
 
