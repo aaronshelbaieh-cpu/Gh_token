@@ -14,6 +14,7 @@ psql -d ged -f migrations/002_schema.sql
 psql -d ged -f migrations/003_indexes_constraints.sql
 psql -d ged -f migrations/004_seed_categories_services.sql
 psql -d ged -f migrations/005_seed_uk_locations.sql
+psql -d ged -f migrations/006_discovery.sql
 ```
 
 Or use the helper:
@@ -43,6 +44,10 @@ Supporting tables (integrity / compliance):
 | `supplier_services` | Many-to-many supplier ↔ service |
 | `campaign_suppliers` | Snapshot of suppliers in a campaign |
 | `suppression_list` | GDPR/PECR opt-outs |
+| `discovery_queries` | Generated service × location search strings |
+| `discovery_runs` | Discovery worker batch executions |
+| `discovery_candidates` | Raw/enriched hits before supplier ingest |
+| `robots_cache` | Cached robots.txt per host |
 
 ## Duplicate rules
 

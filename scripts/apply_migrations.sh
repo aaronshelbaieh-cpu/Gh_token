@@ -24,7 +24,8 @@ for f in \
   002_schema.sql \
   003_indexes_constraints.sql \
   004_seed_categories_services.sql \
-  005_seed_uk_locations.sql
+  005_seed_uk_locations.sql \
+  006_discovery.sql
 do
   echo "→ Applying ${f}"
   psql -v ON_ERROR_STOP=1 -d "$DB_NAME" -f "$MIGRATIONS/$f"
